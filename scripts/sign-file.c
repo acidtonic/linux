@@ -323,6 +323,9 @@ int main(int argc, char **argv)
 		ERR(!pkcs7, "PKCS7_sign");
 #endif
 
+        //Free the private key 
+        EVP_PKEY_free(private_key);
+
 		if (save_sig) {
 			char *sig_file_name;
 			BIO *b;
